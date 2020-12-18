@@ -23,7 +23,7 @@ export class MktrackerService {
         'name': "GMK Thai Tea",
         "start": "11/20/2020",
         "end": "12/19/2020",
-        "type": "keycaps",
+        "type": "Keycaps",
         "price": "135",
         "image": "https://i.imgur.com/mRMXAqh.png",
         "vendors": [{
@@ -56,7 +56,7 @@ export class MktrackerService {
         'name': "NK65 Olivia Edition",
         "start": "11/23/2020",
         "end": "12/20/2020",
-        "type": "keyboard",
+        "type": "Keyboard",
         "price": "200",
         "image": "https://preview.redd.it/zxgh8otk04361.png?width=1024&auto=webp&s=d31f29138f180dbaedec32bebd9e7a5cf1c0aa4d",
         "vendors": [{

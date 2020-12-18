@@ -21,4 +21,8 @@ export class CardComponent implements OnInit {
     }
   }
 
+  checkDaysLeft() {
+    return this.daysLeft === "NaN";
+  }
+
 }

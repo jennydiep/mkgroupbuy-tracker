@@ -21,11 +21,6 @@ export class HomePage {
     
   }
 
-  indexOfProduct(index:number) {
-    // returns index of product that is clicked on 
-    console.log(index);
-  }
-
   setFilteredItems() {
     this.data = this.service.filterItems(this.searchTerm);
     this.sortTerm = null;
@@ -43,7 +38,6 @@ export class HomePage {
   }
 
   sortItems() {
-    console.log('test');
     this.service.sortByPrice(this.sortTerm);
     this.data = this.service.toObject();
 
