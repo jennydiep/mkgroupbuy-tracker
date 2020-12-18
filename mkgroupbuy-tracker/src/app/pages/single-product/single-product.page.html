@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title align="center">{{ name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-img [src]="image"></ion-img>
+  <h1 align="center"> {{ name }} </h1>
+  <h2 align="center">Price: ${{ price }} </h2>
+  <h2 align="center">Start: {{ start }} </h2>
+  <h2 align="center">End: {{ end }} </h2>
+  <h2> Vendors </h2>
+  <ion-list *ngFor="let vendor of vendors">
+    <ion-item [href]="vendor.link"> <strong>({{ vendor.proxy }})</strong>:   {{ vendor.name }}</ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      MK Group Buy Tracker
+    </ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" animated="true" size showCancelButton="focus"></ion-searchbar>
+  
+  <ion-chip (click)="setFilteredItemsbyType('keyboard')" color="primary">
+    <ion-label>Keyboards</ion-label>
+    <!-- <ion-icon name="close-circle"></ion-icon> -->
+  </ion-chip>
+  <ion-chip color="secondary">
+    <ion-label (click)="setFilteredItemsbyType('keycaps')">Keycaps</ion-label>
+  </ion-chip>
+  <ion-chip color="danger">
+    <ion-label (click)="resetItems()">Reset</ion-label>
+  </ion-chip>
+
+  <ion-item>
+    <ion-label>Sort By</ion-label>
+    <ion-select interface="popover" [(ngModel)]="sortTerm" (ionChange)="sortItems()">
+      <ion-select-option  value="price-low">price: low to high</ion-select-option>
+      <ion-select-option  value="price-high">price: high to low</ion-select-option>
+      <ion-select-option value="start">start date</ion-select-option>
+      <ion-select-option value="end">end date</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  
+  
+  <!-- <div id="container"> -->
+    <ion-grid>
+      <ion-row >
+        <ion-col  sizeLg="3" sizeMd="4" sizeXs="12" *ngFor="let item of data">
+          <app-card [id]="item.name" routerDirection="forward" [name]="item.getName()" [type]="item.getType()" [price]="item.getPrice()" [image]="item.getImage()" [daysLeft]="item.getDaysLeft()"></app-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- </div> -->
+</ion-content>
