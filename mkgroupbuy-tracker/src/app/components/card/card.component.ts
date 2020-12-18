@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
     }
 
     if (this.type === "Keyboard") {
-      this.chipColor = "primary";
+      this.chipColor = "primary"; // change chip color from filter
     }
     else {
       this.chipColor = "secondary";
@@ -31,7 +31,7 @@ export class CardComponent implements OnInit {
   }
 
   checkDaysLeft() {
-    return this.daysLeft === "NaN" || this.daysLeft === "0";
+    return this.daysLeft === "NaN" || this.daysLeft === "0"; // if daysleft isn't a number or is equal to zero don't display it
   }
 
 }

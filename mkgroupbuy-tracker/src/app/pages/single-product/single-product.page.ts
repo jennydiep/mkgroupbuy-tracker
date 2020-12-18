@@ -30,10 +30,11 @@ export class SingleProductPage implements OnInit {
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id'); // id to match which product was selected
     this.product = this.service.getProduct(this.id);
     console.log();
 
+    // set information from product to link to html page
     this.name = this.product.getName();
     this.start = this.product.getStart().toDateString();
     this.end = this.product.getEnd().toDateString();

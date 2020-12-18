@@ -60,7 +60,6 @@ export class ProductData {
             return "Unknown";
         }
         else {
-            // const startTime = Date.UTC(this.start.getFullYear(), this.start.getMonth(), this.start.getDate());
             var nowDate = new Date();
             let nowTime = Date.UTC(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate());
             const endTime = Date.UTC(this.end.getFullYear(), this.end.getMonth(), this.end.getDate());

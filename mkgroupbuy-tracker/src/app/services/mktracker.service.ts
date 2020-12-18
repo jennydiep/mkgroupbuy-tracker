@@ -16,7 +16,6 @@ export class MktrackerService {
    }
 
   initializeJSONData(){
-    // TODO: link from db
     // information in json format of list of products
     this.jsonData = [
       {
@@ -593,10 +592,11 @@ export class MktrackerService {
     // make json into list of product objects
     let products = [];
     for (let i = 0; i < this.jsonData.length; i++) {
+      // adding every item in jsondata and converting it to a productdata object
       let vendors = [];
       for (let j = 0; j < this.jsonData[i]["vendors"].length; j++) {
+        // add every vendor into vendor object and add to productdata
         let vendor = new VendorData(this.jsonData[i]["vendors"][j]["name"], this.jsonData[i]["vendors"][j]["url"], this.jsonData[i]["vendors"][j]["proxy"]);
-        // console.log(vendor.link);
         vendors.push(vendor);
       }
 
@@ -606,8 +606,7 @@ export class MktrackerService {
   }
 
   getProduct(id:string) {
-    // return product 
-    // return this.data[id];
+    // get the product that matches the id (for single-page product)
     for (let i = 0; i < this.data.length; i++) {
       if (id === this.data[i].getName()) {
         return this.data[i];
@@ -636,6 +635,7 @@ export class MktrackerService {
   }
 
   sortByPrice(type:string) {
+    // function for sort by feature
     if (type === "price-high") {
       this.jsonData = this.jsonData.sort((a,b) => {
         return parseFloat(b.price) - parseFloat(a.price);

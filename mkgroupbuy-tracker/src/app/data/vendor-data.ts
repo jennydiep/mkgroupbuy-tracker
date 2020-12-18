@@ -1,4 +1,5 @@
 export class VendorData {
+    // class to store data about vendors, to be stored within productdata
     name:string;
     link:string;
     proxy:string;
