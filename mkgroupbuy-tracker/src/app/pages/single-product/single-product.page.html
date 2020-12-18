@@ -16,6 +16,6 @@
   <h2 *ngIf="end !=='Invalid Date'" align="center">End: {{ end }} </h2>
   <h2> Vendors </h2>
   <ion-list *ngFor="let vendor of vendors">
-    <ion-item [href]="vendor.link"> <strong>({{ vendor.proxy }})</strong>:   {{ vendor.name }}</ion-item>
+    <ion-item class="item" [href]="vendor.link"> <strong>({{ vendor.proxy }})</strong>:   {{ vendor.name }}</ion-item>
   </ion-list>
 </ion-content>

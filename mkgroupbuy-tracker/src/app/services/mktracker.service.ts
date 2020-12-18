@@ -53,24 +53,6 @@ export class MktrackerService {
           }]
       },
       {
-        'name': "NK65 Olivia Edition",
-        "start": "11/23/2020",
-        "end": "12/20/2020",
-        "type": "Keyboard",
-        "price": "200",
-        "image": "https://preview.redd.it/zxgh8otk04361.png?width=1024&auto=webp&s=d31f29138f180dbaedec32bebd9e7a5cf1c0aa4d",
-        "vendors": [{
-            "name": "CannonKeys",
-            "url" : "https://cannonkeys.com/collections/featured/products/gb-gmk-pink-on-navy",
-            "proxy": "US"
-          },
-          {
-            "name": "DeskHero",
-            "url" : "https://www.deskhero.ca/collections/open-group-buys/products/gmk-pink-on-navy",
-            "proxy": "CAN"
-          }]
-      },
-      {
         'name': "Monarch 65",
         "start": "12/5/2020",
         "end": "12/20/2020",
@@ -120,6 +102,24 @@ export class MktrackerService {
             "name": "Last Padawan",
             "url" : "https://lastpadawan.store/",
             "proxy": "Worldwide"
+          }]
+      },
+      {
+        'name': "NK65 Olivia Edition",
+        "start": "12/3/2020",
+        "end": "12/24/2020",
+        "type": "Keyboard",
+        "price": "230",
+        "image": "https://preview.redd.it/zxgh8otk04361.png?width=1024&auto=webp&s=d31f29138f180dbaedec32bebd9e7a5cf1c0aa4d",
+        "vendors": [{
+            "name": "Novelkeys",
+            "url" : "https://novelkeys.xyz/collections/frontpage/products/nk65-olivia-edition-gb?variant=37484826951847",
+            "proxy": "US"
+          },
+          {
+            "name": "EU: Oblotzky Industries",
+            "url" : "https://oblotzky.industries/",
+            "proxy": "EU"
           }]
       },
       {
@@ -657,9 +657,12 @@ export class MktrackerService {
       return this.toObject();
     }
     else if (type === "end") {
-      this.data = this.data.sort((a,b) => {
-        return a.getEnd() > b.getEnd() ? 1 : -1;
+      this.jsonData = this.jsonData.sort((a,b) => {
+        let enda = new Date(a.end);
+        let endb = new Date(b.end)
+        return enda > endb ? 1 : -1;
       });
+      return this.toObject();
     }
     
   }
