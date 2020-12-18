@@ -24,10 +24,11 @@
   <ion-item>
     <ion-label>Sort By</ion-label>
     <ion-select interface="popover" [(ngModel)]="sortTerm" (ionChange)="sortItems()">
-      <ion-select-option  value="price-low">price: low to high</ion-select-option>
+      <ion-select-option *ngFor="let term of sortTerms" value="{{ term }}">{{ term }}</ion-select-option>
+      <!-- <ion-select-option  value="price-low">price: low to high</ion-select-option>
       <ion-select-option  value="price-high">price: high to low</ion-select-option>
       <ion-select-option value="start">start date</ion-select-option>
-      <ion-select-option value="end">end date</ion-select-option>
+      <ion-select-option value="end">end date</ion-select-option> -->
     </ion-select>
   </ion-item>
 

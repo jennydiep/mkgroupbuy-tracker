@@ -20,26 +20,6 @@ export class MktrackerService {
     // information in json format of list of products
     this.jsonData = [
       {
-        'name': "NK65 Olivia Edition",
-        "start": "11/23/2020",
-        "end": "12/20/20",
-        "type": "keyboard",
-        "price": "200",
-        "image": "https://preview.redd.it/zxgh8otk04361.png?width=1024&auto=webp&s=d31f29138f180dbaedec32bebd9e7a5cf1c0aa4d",
-        "vendors": [{
-            "name": "CannonKeys",
-            "url" : "https://cannonkeys.com/collections/featured/products/gb-gmk-pink-on-navy",
-            "proxy": "US"
-          },
-          {
-            "name": "DeskHero",
-            "url" : "https://www.deskhero.ca/collections/open-group-buys/products/gmk-pink-on-navy",
-            "proxy": "CAN"
-          }]
-      },
- 
- 
-      {
         'name': "GMK Thai Tea",
         "start": "11/20/2020",
         "end": "12/19/2020",
@@ -72,7 +52,24 @@ export class MktrackerService {
             "proxy": "ASIA"
           }]
       },
- 
+      {
+        'name': "NK65 Olivia Edition",
+        "start": "11/23/2020",
+        "end": "12/20/2020",
+        "type": "keyboard",
+        "price": "200",
+        "image": "https://preview.redd.it/zxgh8otk04361.png?width=1024&auto=webp&s=d31f29138f180dbaedec32bebd9e7a5cf1c0aa4d",
+        "vendors": [{
+            "name": "CannonKeys",
+            "url" : "https://cannonkeys.com/collections/featured/products/gb-gmk-pink-on-navy",
+            "proxy": "US"
+          },
+          {
+            "name": "DeskHero",
+            "url" : "https://www.deskhero.ca/collections/open-group-buys/products/gmk-pink-on-navy",
+            "proxy": "CAN"
+          }]
+      },
       {
         'name': "Monarch 65",
         "start": "12/5/2020",
@@ -632,7 +629,6 @@ export class MktrackerService {
     // filter by type to select either keycaps or keyboards
     this.initializeJSONData();
     this.jsonData = this.jsonData.filter(item => {
-      console.log(item.name);
       return item.type.toLowerCase() == term.toLowerCase();
     });
     this.data = this.toObject();
@@ -640,7 +636,6 @@ export class MktrackerService {
   }
 
   sortByPrice(type:string) {
-    this.initializeJSONData();
     if (type === "price-high") {
       this.jsonData = this.jsonData.sort((a,b) => {
         return parseFloat(b.price) - parseFloat(a.price);
